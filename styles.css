@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--main-font-color);
+}
+
+html {
+    font-size: 100%;
+    font-family: var(--main-title-font);
+    height: 100%;
+}
+
+:root {
+    --main-title-font: Josefin Sans;
+    --name-font: Major Mono Display;
+}
+
+input {
+    width: 75%;
+}
+
+#submitButton {
+    width: 20%;
+}
+
+#memeShowcase {
+    display: flex;
+}
+
+.memeImage{
+    display: flex;
+    flex-direction: column;
+    /* max-width: 10vw; */
+    max-width: 20%;
+    height: auto;
+}
