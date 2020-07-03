@@ -13,7 +13,7 @@ html {
 
 :root {
     --main-title-font: Josefin Sans;
-    --name-font: Major Mono Display;
+    --meme-text-font: Anton;
 }
 
 input {
@@ -28,10 +28,45 @@ input {
     display: flex;
 }
 
-.memeImage{
+.imgFlexContainer{
     display: flex;
     flex-direction: column;
-    /* max-width: 10vw; */
-    max-width: 20%;
-    height: auto;
+    border: 1px solid black;
+    position: relative;
+}
+
+.memeImage{
+    /* max-width: 20%;
+    height: auto; */
+    display: flex;
+}
+
+.imageText{
+    font-family: var(--meme-text-font);
+    font-size: 1.5rem;
+    color: white;
+    text-transform: uppercase;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-shadow:
+    2px 2px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+
+}
+
+.upperText {
+    justify-content: start;
+    align-self: center;
+    position: absolute;
+}
+
+.lowerText{
+    justify-content: end;
+    align-self: center;
+    position: absolute;
+    bottom: 0px;
 }
