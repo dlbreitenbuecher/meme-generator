@@ -7,29 +7,94 @@
 
 html {
     font-size: 100%;
-    font-family: var(--main-title-font);
+    font-family: var(--main-content-font);
     height: 100%;
 }
 
 :root {
-    --main-title-font: Josefin Sans;
+    --main-title-font: "Roboto Slab";
+    --main-content-font: "Scope One", sans-serif;
     --meme-text-font: Anton;
 }
 
+
+/* Main Grid */
+
+#mainGridContainer{
+    min-height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 300px 1fr 150px;
+    align-items: center;
+    grid-template-areas: 
+                        "header"
+                        "form"
+                        "memes"
+                        "footer";
+}
+
+
+/* Header and Form Sections */
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--main-title-font);
+    background: #1abc9c;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+header h1{
+    font-size: 2.8rem;
+}
+
+#form{
+    margin-top: 2rem;
+    grid-area: form;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 1.2rem;
+    margin-left: 50px;
+    line-height: 2;
+}
+
+
 input {
-    width: 75%;
+    font-size: 1rem;
 }
 
 #submitButton {
-    width: 20%;
+    font-family: var(--main-title-font);
+    height: auto;
+    font-size: 1rem;
+    margin-top: 8px;
 }
 
+
+/* Meme Section */
+
+/* Grid Container for Memes */
 #memeShowcase {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
-    border: 1px solid black;
+    align-self: start;
+    grid-area: memes;
+    /* display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr)); */
+
+    /* justify-content: space-between; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
+/* Flex Container for individual Memes (img, top-text, bottom-text */
 .imgFlexContainer{
     display: flex;
     flex-direction: column;
@@ -37,9 +102,11 @@ input {
 }
 
 .memeImage{
-    /* max-width: 20%;
-    height: auto; */
+    max-width: 400px;
+    max-height: auto;
     display: flex;
+    margin-right: 8px;
+    margin-top: 8px;
 }
 
 .imageText{
@@ -63,6 +130,7 @@ input {
     justify-content: start;
     align-self: center;
     position: absolute;
+    top: 8px;
 }
 
 .lowerText{
@@ -72,19 +140,54 @@ input {
     bottom: 0px;
 }
 
+
+/* Classes to delete memes */
+
 .deleteImage {
     opacity: .2;
 }
 
 .deleteButton {
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
-    background-color: lightblue;
+    background-color: black;
+    color: white;
+    font-size: 3rem;
     cursor: pointer;
     align-self: center;
     justify-content: center;
+    opacity: 1;
     position: absolute;
+    top: 50px;
+    padding: auto;
 }
 
 
+footer{
+    width: 100%;
+    grid-area: footer;
+    /* margin: 0;
+    padding: 0; */
+    display: flex;
+    justify-content: center;
+}
+
+#footerMessage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer img {
+    /* margin: 0 auto 0 auto; */
+    width: 56px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+footer p {
+    color: #828282;
+    font-size: 1rem;
+    font-weight: 300;
+}

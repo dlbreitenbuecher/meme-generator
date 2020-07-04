@@ -8,28 +8,46 @@
     <meta name="keywords" content="meme, generator, image">
     <meta name="author" content="David Breitenbuecher">
 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet" type="text/css"> 
+    <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h1>Meme Generator</h1>
-    <form action="">
-        <label for='imageURL'>Image URL:</label>
-        <input type='url' id='imageURL' name='imageURL' placeholder="What is the URL for your image?" required><br>
+    <div id="mainGridContainer">
+        <header>
+            <h1>Meme Generator</h1>
+        </header>
+        <section id="form">
+            <form action="">
+                <label for='imageURL'>Image URL:</label>
+                <input type='url' id='imageURL' name='imageURL' placeholder="What is the URL for your image?" size='40' required><br>
+                
+                <label for='topText'>Text on Top:</label>
+                <input type='text' id='topText' name='topText' placeholder="(Optional) What would you like on the top?" size='39' maxlength="30"><br>
+
+                <label for='bottomText'>Text on Bottom:</label>
+                <input type="text" id="bottomText" name="bottomText" placeholder="(Optional) What would you like on the bottom?" size='36' maxlength="30"><br>
+                <input type='submit' id='submitButton' value='Generate Meme'>
+            </form>
+        </section>
+
+        <!-- <img src="https://miniblogcore.azurewebsites.net/Posts/files/cat_637121647509154829.jpg"> -->
+        <section id='memeShowcase'>
+            <!-- This is where the JavaScript Generated Memes Go -->
+        </section>
+
+        <footer>
+            <section id='footerMessage'>
+                <img src="/assets/ggBridgeFooterIcon.png" alt="Golden Gate Bridge">
+                <p>Made with &#9825;</p>
+                <p>in San Francisco</p>
+            </section>
+        </footer>
         
-        <label for='topText'>Text on Top:</label>
-        <input type='text' id='topText' name='topText' placeholder="(Optional) What text would you like on the top?" maxlength="30"><br>
-
-        <label for='bottomText'>Text on Bottom:</label>
-        <input type="text" id="bottomText" name="bottomText" placeholder="(Optional) What text would you like on the bottom?" maxlength="30"><br>
-        <input type='submit' id='submitButton'>
-    </form>
-
-    <!-- <img src="https://miniblogcore.azurewebsites.net/Posts/files/cat_637121647509154829.jpg"> -->
-    <section id='memeShowcase'>
-
-    </section>
-
+    </div>
     <script src="app.js"></script>
 </body>
 </html>

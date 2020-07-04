@@ -48,7 +48,7 @@ window.onload = function() {
             let deleteButton = document.createElement('button');
             deleteButton.classList.add('deleteButton');
             deleteButton.innerText = 'X';
-            imgFlexContainer.setAttribute('id', 'test');
+            imgFlexContainer.setAttribute('id', 'delete');
             imgFlexContainer.appendChild(deleteButton);
 
             // deleteButton.onclick=function deleteImage() {
@@ -65,7 +65,7 @@ window.onload = function() {
         imgFlexContainer.onmouseleave = function mouseLeave(){
             imgFlexContainer.classList.remove('deleteImage');
             imgFlexContainer.removeChild(document.querySelector('button'));
-            imgFlexContainer.removeAttribute('id', 'test');
+            imgFlexContainer.removeAttribute('id', 'delete');
         }
 
 
